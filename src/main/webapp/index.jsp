@@ -4,11 +4,11 @@
 
 <a href="https://itdefined.org">Click Here to DevOps Content</a>
   
-  <h2> Call Us : 1234567</h2>
+  <h2> Contact us : 1234567</h2>
   
-  <h3> Ofc Location : Bangalore</h3>
+  <h3> Office Location : Bangalore</h3>
   
-  <h1> ITDEFINED---->Think Rational  </h1>
+  <h1> DevOps --> Developemnt and Operations </h1>
 
 </body>
 </html>
