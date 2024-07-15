@@ -8,7 +8,7 @@
   
   <h3> Office Location : Bangalore</h3>
   
-  <h1> DevOps --> Developemnt and Operations </h1>
+  <h1> DevOps-- Developemnt and Operations </h1>
 
 </body>
 </html>
