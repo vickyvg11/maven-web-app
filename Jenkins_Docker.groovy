@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     environment {
-        GIT_BRANCH= 'master'
+        GIT_BRANCH='master'
         GIT_ID= 'ID_2_git'
         GIT_URL= 'https://github.com/vickyvg11/maven-web-app.git'
     }
@@ -16,6 +16,11 @@ pipeline {
             }
         }
 
+      stage ('Build app') {
+        steps {
+            sh 'ls -lrt'
+        }
+      }  
       
     }
 }
