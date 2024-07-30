@@ -7,6 +7,13 @@ pipeline {
         GIT_URL= 'https://github.com/vickyvg11/maven-web-app.git'
     }
 
+    options {
+        // Disable parallel stages for clarity (optional)
+        disableParallelStages()
+        disableConcurrentBuilds()
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '3'))
+    }
     stages {
             stage ('Build app') {
         agent {
