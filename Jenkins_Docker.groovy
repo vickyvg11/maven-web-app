@@ -15,14 +15,13 @@ pipeline {
     stages {
             stage ('Build app') {
         agent {
-            docker { image 'maven' }
+            docker { image 'maven:latest' }
         }
-
-          steps {
+        steps {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
                 url:"${GIT_URL}"
-                sh 'mvn clean package'
+                sh ' docker run -i --rm -v maven_web_app:/app -w /app --name run_maven maven:latest mvn clean package'
             }
       }  
     }
