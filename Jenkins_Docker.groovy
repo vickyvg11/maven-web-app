@@ -7,17 +7,17 @@ pipeline {
         GIT_URL= 'https://github.com/vickyvg11/maven-web-app.git'
     }
 
-      stage ('Build app') {
+    stage {
+            stage ('Build app') {
         agent {
             docker { image 'maven' }
         }
-        
+
           steps {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
                 url:"${GIT_URL}"
             }
       }  
-      
     }
 }
