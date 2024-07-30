@@ -17,6 +17,7 @@ pipeline {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
                 url:"${GIT_URL}"
+                sh 'mvn clean package'
             }
       }  
     }
