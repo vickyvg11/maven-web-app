@@ -8,8 +8,6 @@ pipeline {
     }
 
     options {
-        // Disable parallel stages for clarity (optional)
-        disableParallelStages()
         disableConcurrentBuilds()
         timestamps()
         buildDiscarder(logRotator(numToKeepStr: '3'))
