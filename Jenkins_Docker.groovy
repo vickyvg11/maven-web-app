@@ -13,7 +13,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     stages {
-            stage ('Git Checkout') {
+        stage ('Git Checkout') {
         steps {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
