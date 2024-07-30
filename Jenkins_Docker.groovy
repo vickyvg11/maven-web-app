@@ -13,15 +13,23 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     stages {
-            stage ('Build app') {
-        agent {
-            docker { image 'maven:latest' }
-        }
+            stage ('Git Checkout') {
         steps {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
                 url:"${GIT_URL}"
-                sh ' docker run -i --rm -v maven_web_app:/app -w /app --name run_maven maven:latest mvn clean package'
+                
+            }
+
+            stage('Build app') {
+            agent {
+                docker {
+                    image 'maven:latest'
+                    args '-v maven_web_app:/app'
+                }
+            }
+            steps {
+                sh 'mvn clean package'
             }
       }  
     }
