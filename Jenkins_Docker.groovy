@@ -14,7 +14,7 @@ pipeline {
     }
     stages {
         stage ('Git Checkout') {
-        steps {
+            steps {
                 git branch:"${GIT_BRANCH}",
                 credentialsId: "${GIT_ID}",
                 url:"${GIT_URL}"
