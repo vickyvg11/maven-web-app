@@ -2,9 +2,9 @@ pipeline {
     agent any 
 
     environment {
-        GIT_BRANCH='master'
-        GIT_ID= 'ID_2_git'
-        GIT_URL= 'https://github.com/vickyvg11/maven-web-app.git'
+        GIT_BRANCH = 'master'
+        GIT_ID = 'ID_2_git'
+        GIT_URL = 'https://github.com/vickyvg11/maven-web-app.git'
     }
 
     options {
@@ -13,15 +13,14 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     stages {
-        stage ('Git Checkout') {
+        stage('Git Checkout') {
             steps {
-                git branch:"${GIT_BRANCH}",
-                credentialsId: "${GIT_ID}",
-                url:"${GIT_URL}"
-                
+                git branch: "${GIT_BRANCH}",
+                     credentialsId: "${GIT_ID}",
+                     url: "${GIT_URL}"
             }
-
-            stage('Build app') {
+        }
+        stage('Build app') {
             agent {
                 docker {
                     image 'maven:latest'
@@ -31,7 +30,6 @@ pipeline {
             steps {
                 sh 'mvn clean package'
             }
-      }  
+        }
     }
-}
 }
