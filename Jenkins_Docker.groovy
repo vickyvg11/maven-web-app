@@ -19,6 +19,7 @@ pipeline {
       stage ('Build app') {
         steps {
             sh 'ls -lrt'
+            sh 'docker build -t devops893/docker_repo .'
         }
       }  
       
