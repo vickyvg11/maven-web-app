@@ -52,7 +52,7 @@ pipeline {
             }
         }
     }
-
+         }
         stage ('Packaging the code') {
             steps {
                 sh 'mvn package'
@@ -74,6 +74,4 @@ pipeline {
 
     
     }
-}
-
 }
