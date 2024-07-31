@@ -3,6 +3,10 @@ pipeline {
         label 'Slave1'
     }
 
+    tools {
+        maven 'maven-3.9.8'
+    }
+
     environment {
         GIT_BRANCH = 'master'
         GIT_ID = 'ID_2_git'
